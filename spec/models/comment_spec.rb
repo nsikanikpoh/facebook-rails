@@ -22,12 +22,12 @@ RSpec.describe Comment, type: :model do
 
   it 'is not valid without a valid post_id' do
     comment.post_id = 0
-    expect(comment).to_not be_valid
+    expect(comment).not_to be_valid
   end
 
   it 'is not valid without a valid user_id' do
     comment.user_id = 0
-    expect(comment).to_not be_valid
+    expect(comment).not_to be_valid
   end
 
 end

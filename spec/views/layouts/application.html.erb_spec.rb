@@ -26,10 +26,10 @@ RSpec.describe 'layouts/application.html.erb' do
 
     it 'does NOT display "Home" and "All Users" in the navbar' do
       render
-      expect(rendered).to_not have_text('All Users')
-      expect(rendered).to_not have_text('Edit Account')
-      expect(rendered).to_not have_text('Home')
-      expect(rendered).to_not have_text('Sign Out')
+      expect(rendered).not_to have_text('All Users')
+      expect(rendered).not_to have_text('Edit Account')
+      expect(rendered).not_to have_text('Home')
+      expect(rendered).not_to have_text('Sign Out')
     end
 
   end

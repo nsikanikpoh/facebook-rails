@@ -9,17 +9,13 @@ class PostsController < ApplicationController
     @posts = Post.friends_posts(current_user).paginate(page: params[:page], per_page: 5)
     new_comment
   end
-
   def privacy
   end
-
   # GET /posts/1
   # GET /posts/1.json
   def show
     new_comment
   end
-
-
   # GET /posts/1/edit
   def edit
   end
@@ -29,9 +25,9 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-       redirect_to root_url, notice: 'Post was successfully created.'
+      redirect_to root_url, notice: 'Post was successfully created.'
     else
-       redirect_to root_url, notice: 'Failure creating post.'
+      redirect_to root_url, notice: 'Failure creating post.'
     end
   end
 

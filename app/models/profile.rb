@@ -13,7 +13,7 @@ class Profile < ApplicationRecord
 
   def birth_date_valid
     errors.add(:birthday, "can not be in the future") if
-    !birthday.blank? and birthday > Date.today
+    !birthday.blank? && birthday > Date.today
   end
 
   def profile_photo(size)

@@ -24,7 +24,7 @@ RSpec.describe "profiles/show.html.erb", type: :view do
       expect(rendered).to have_text("#{user.first_name} #{user.last_name}")
 
       expect(rendered).to have_text('Date of Birth:')
-      expect(rendered).to_not have_text("#{user.first_name}'s friends:")
+      expect(rendered).not_to have_text("#{user.first_name}'s friends:")
 
       # NOT WORKING!
       #expect(rendered).to have_link href: "/profiles/#{user.id}"

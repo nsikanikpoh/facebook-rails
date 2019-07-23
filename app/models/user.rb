@@ -22,7 +22,8 @@ class User < ApplicationRecord
   end
 
   def self.search(search)
-    where("lower(users.first_name) LIKE :search OR lower(users.last_name) LIKE :search", search: "%#{search.downcase}%").uniq
+    where("lower(users.first_name) LIKE :search OR lower(users.last_name) LIKE :search",
+      search: "%#{search.downcase}%").uniq
   end
 
   def make_profile

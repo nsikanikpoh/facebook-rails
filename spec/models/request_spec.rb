@@ -17,12 +17,12 @@ RSpec.describe Request, type: :model do
 
   it 'is not valid without a valid requester_id' do
     request.requester_id = 0
-    expect(request).to_not be_valid
+    expect(request).not_to be_valid
   end
 
   it 'is not valid without a valid requestee_id' do
     request.requestee_id = 0
-    expect(request).to_not be_valid
+    expect(request).not_to be_valid
   end
 
   describe '#accept' do

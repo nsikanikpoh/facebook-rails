@@ -1,6 +1,7 @@
 require: rubocop-rspec
 
 AllCops:
+  TargetRubyVersion: 2.4
   Exclude:
     - "db/schema.rb"
     - "db/seeds.rb"
@@ -10,17 +11,29 @@ AllCops:
     - "config/**/*"
     - Rakefile
     - Gemfile
-    - "spec/spec_helper.rb"
-    - "spec/rails_helper.rb"
+    - "spec/**/*"
     - "vendor/**/*"
+
 
 Style/Documentation:
   Enabled: false
-  
+
+Style/RedundantSelf:
+  Enabled: false
+
+Metrics/LineLength:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+
 Style/FrozenStringLiteralComment:
   Enabled: false
 
 Style/StringLiterals:
+  Enabled: false
+
+Style/SymbolArray:
   Enabled: false
 
 Layout/EmptyLineAfterMagicComment:
@@ -34,3 +47,36 @@ Layout/EmptyLinesAroundClassBody:
 
 Capybara/FeatureMethods:
   Enabled: false
+Layout/IndentationWidth:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: false
+Layout/IndentationConsistency:
+  Enabled: false
+Style/EmptyMethod:
+  Enabled: false
+Layout/EmptyLinesAroundAccessModifier:
+  Enabled: false
+Layout/CommentIndentation:
+  Enabled: false
+Layout/DefEndAlignment:
+  Enabled: false
+Layout/EmptyLines:
+  Enabled: false
+Layout/MultilineBlockLayout:
+  Enabled: false
+Style/Lambda:
+  Enabled: false
+Naming/MemoizedInstanceVariableName:
+  Enabled: false
+Layout/BlockEndNewline:
+  Enabled: false
+Layout/EmptyLineBetweenDefs:
+  Enabled: false
+
+Layout/AlignArguments:
+  Enabled: false
+
+Metrics/BlockLength:
+  Exclude:
+    - 'Guardfile'

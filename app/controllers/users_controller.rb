@@ -1,12 +1,12 @@
 class UsersController < ApplicationController
 
   def index
-    @users = User.where('id != ?' , current_user.id)
+    @users = User.where('id != ?', current_user.id)
   end
 
   def search
   if params[:search].blank?
-    redirect_to(root_path, alert: "Empty field!") and return
+    redirect_to(root_path, alert: "Empty field!") && return
   else
     @users = User.search(params[:search].downcase)
     @search = params[:search]

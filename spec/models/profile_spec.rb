@@ -16,27 +16,27 @@ RSpec.describe Profile, type: :model do
 
   it "is not valid with a valid user_id" do
     profile.user_id = 0
-    expect(profile).to_not be_valid
+    expect(profile).not_to be_valid
   end
 
   it "is not valid with a birthday in the future" do
     profile.birthday = '4515-02-28'
-    expect(profile).to_not be_valid
+    expect(profile).not_to be_valid
   end
 
   it "is not valid with a gender that has too many characters" do
     profile.gender = 'qwert' * 20 + 'y'
-    expect(profile).to_not be_valid
+    expect(profile).not_to be_valid
   end
 
   it "is not valid with a location that has too many characters" do
     profile.location = 'qwert' * 51 + 'y'
-    expect(profile).to_not be_valid
+    expect(profile).not_to be_valid
   end
 
   it "is not valid with a bio that has too many characters" do
     profile.bio = 'qwert' * 400 + 'y'
-    expect(profile).to_not be_valid
+    expect(profile).not_to be_valid
   end
 
 end

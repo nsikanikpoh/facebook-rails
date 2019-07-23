@@ -10,9 +10,6 @@ class LikesController < ApplicationController
        redirect_to root_url, notice: 'Like did not work'
     end
   end
-
-
-
   # DELETE /likes/1
   # DELETE /likes/1.json
   def destroy

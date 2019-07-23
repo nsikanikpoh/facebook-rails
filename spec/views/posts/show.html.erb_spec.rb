@@ -41,10 +41,10 @@ RSpec.describe 'posts/show.html.erb' do
         # NOT WORKING!
         #expect(rendered).to have_link href: "/profiles/#{other_user_post.user_id}"
         expect(rendered).to have_text("#{other_user_post.content}")
-        expect(rendered).to_not have_text('Edit Post')
-        expect(rendered).to_not have_text('Delete')
+        expect(rendered).not_to have_text('Edit Post')
+        expect(rendered).not_to have_text('Delete')
         # NOT WORKING
-        # expect(rendered).to_not have_tag('span', :with => { :class => 'edit-delete-post' })
+        # expect(rendered).not_to have_tag('span', :with => { :class => 'edit-delete-post' })
       end
 
   end
