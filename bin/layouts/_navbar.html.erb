@@ -1,0 +1,29 @@
+<div class="navbar">
+    <ul style="list-style: none;">
+      <% if user_signed_in? %>
+        <li class="link-all-users">
+          <%= link_to 'All Users', users_index_path %>
+        </li>
+        <li class="navbar-tac">
+          <%= image_tag current_user.profile.profile_photo('tac'), class: "tac-image" %>
+        </li>
+        <li class="link-user-name">
+          <%= link_to "#{current_user.first_name}", current_user.profile %>
+        </li>
+        <li class="link-home">
+          <%= link_to 'Home', root_url %>
+        </li>
+        <% if current_user.received_requests.where(accepted: 0).count > 0 %>
+            <li class="link-requests">
+              <%= link_to "Friend Requests (#{current_user.received_requests.where(accepted: 0).count})", requests_path %>
+            </li>
+        <% end %>
+        <li class="link-edit">
+          <%= link_to 'Edit Account', edit_user_registration_path(current_user) %>
+        </li>
+        <li class="link-signout">
+          <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+        </li>
+      <% end %>
+    </ul>
+</div>

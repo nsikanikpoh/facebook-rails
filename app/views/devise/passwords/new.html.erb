@@ -1,0 +1,33 @@
+<div class="entry-navbar navbar">
+    <ul style="list-style: none;">
+        <li class="logo">
+          Facebook
+        </li>
+        <li class="link-login">
+          <%= link_to 'Log In', new_user_session_path %>
+        </li>
+    </ul>
+</div>
+
+<div class="registrations-new">
+
+<p class="regist-free">Forgot your password?</p>
+<br/>
+
+
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="actions registration-button"">
+    <%= f.submit "Send me reset password instructions" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+</div>

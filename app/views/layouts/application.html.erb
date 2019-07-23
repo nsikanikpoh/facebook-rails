@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Facebook</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= favicon_link_tag 'oauth_facebook.png' %>
+    <link    href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+
+ <%= render partial: "layouts/navbar"%>
+ <% flash.each do |message_type, message| %>
+ <div class="alert alert-success" role="alert"><%= message_type.to_s.capitalize %> - <%= message %></div>
+ </div>
+<% end %>
+    <%= yield %>
+  </body>
+
+  <script type="text/javascript">
+  // to replicate focus on each specific respective comment field when clicking on their respective above comment button:
+    let commentButton = document.querySelectorAll('.comment-button');
+    let commentField = document.querySelectorAll('.comment-field');
+    commentButton.forEach(event => event.addEventListener('click', focus_function));
+    function focus_function() {
+       let index = Array.from(commentButton).indexOf(this);
+       commentField[index].focus();
+    }
+  </script>
+
+
+</html>
